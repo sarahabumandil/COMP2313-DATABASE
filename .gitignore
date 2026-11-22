@@ -1,0 +1,23 @@
+# Oracle / SQL
+*.log
+*.dmp
+*.trc
+*.ora
+connection.env
+*.credentials
+
+# Office temp files
+~$*.docx
+~$*.pptx
+~$*.xlsx
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# Build / build-like
+__pycache__/
+*.pyc
