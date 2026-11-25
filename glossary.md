@@ -220,3 +220,129 @@
 | 48 | **Paper / Plastic** | بيبر / بلاستيك | ورقي / بلاستيكي | نوعان فرعيان لأكياس البقالة |
 | 49 | **Payment types** | بايمنت تايبس | أنواع الدفع | «payment types (check, cash, credit)» — مثال واقعي |
 | 50 | **Common to all** | كومون تو أول | مشترك بين الجميع | «Attributes that will be common to all of the subtypes related to it» — شرط كتابة الخاصية في النوع الأعلى |
+
+# Glossary — Relationship Transferability & Types (Chapter 5)
+
+| # | Term | النطق بالعربي | الترجمة | التعريف كما ورد بالسلايد |
+|:-:|---|---|---|---|
+| 1 | **Relationship Transferability** | ريليشنشيب ترانسفيرابيليتي | قابلية نقل العلاقة | خاصية تحدد هل يمكن نقل العلاقة من كيان إلى آخر بعد إنشائها أم لا — موضوع الفصل كاملًا |
+| 2 | **Allocated** | ألوكيتد | مُخصَّص / مُسنَد | «Once a class has been allocated to a teacher, can that class later be transferred to another teacher?» — الحالة التي تكون فيها العلاقة قابلة للتحويل |
+| 3 | **Transferred** | ترانسفيرد | منقول | «Can that class later be transferred to another teacher, possibly in mid-semester?» — نقل العلاقة من طرف لآخر |
+| 4 | **Mid-semester** | ميد-سيميستر | منتصف الفصل الدراسي | مثال على أن النقل قد يحدث في أي وقت وليس فقط في البداية |
+| 5 | **Business rule** | بيزنس رول | قاعدة عمل | «This business rule is normally determined by what is most efficient and most profitable for the club.» — القاعدة التي تحدد إن كانت العلاقة قابلة للنقل أم لا |
+| 6 | **Efficient** | إفيشنت | فعّال / كفء | أحد المعيارين اللذين يحددان قابلية النقل |
+| 7 | **Profitable** | بروفيتابل | مُربِح | المعيار الثاني — المنفعة المالية للعمل |
+| 8 | **Transferable** | ترانسفيرابل | قابل للنقل | «A person may change departments or jobs within a company, so the relationship is transferable.» — العلاقة يمكن استبدال أحد طرفيها بطرف آخر |
+| 9 | **Nontransferable** | نون-ترانسفيرابل | غير قابل للنقل | «Once the order is placed by someone, that relationship cannot change.» — العلاقة تُقفل بمجرد إنشائها |
+| 10 | **EMPLOYEE–DEPARTMENT** | إمبلوي–ديبارتمنت | الموظف–القسم | المثال المرجعي في السلايد 5–7 لتوضيح Optionality ثم Cardinality ثم Transferability |
+| 11 | **Assigned to** | أسايند تو | مُسنَد إلى | اسم العلاقة من جهة EMPLOYEE تجاه DEPARTMENT في مثال السلايد 5 |
+| 12 | **Responsible for** | ريسبونسيبل فور | مسؤول عن | اسم العلاقة من جهة DEPARTMENT تجاه EMPLOYEE |
+| 13 | **Optionality (review)** | أوبشناليتي (ريفيو) | اختيارية العلاقة | «Must every EMPLOYEE be assigned to a DEPARTMENT? Must every DEPARTMENT be responsible for an employee?» — إعادة مراجعة قبل تحديد Transferability |
+| 14 | **Cardinality (review)** | كارديناليتي (ريفيو) | عددية العلاقة | «How many EMPLOYEEs can a DEPARTMENT be responsible for? How many DEPARTMENTs can an EMPLOYEE be assigned to?» — إعادة مراجعة |
+| 15 | **Transferability question** | ترانسفيرابيليتي كويستشن | سؤال قابلية النقل | «Can an EMPLOYEE be transferred from one DEPARTMENT to another DEPARTMENT?» — السؤال الفاصل بين النوعين |
+| 16 | **STUDENT–STUDY GROUP** | ستيودنت–ستادي جروب | الطالب–مجموعة الدراسة | مثال على علاقة **Transferable** — «A STUDENT being allowed to move from one STUDY GROUP to another.» |
+| 17 | **Join** | جوين | ينضم | اسم العلاقة من جهة STUDENT تجاه STUDY GROUP |
+| 18 | **Have** | هاف | يمتلك / يحتوي | اسم العلاقة من جهة STUDY GROUP تجاه STUDENT |
+| 19 | **STUDENT–RECEIPT** | ستيودنت–ريسيبت | الطالب–الإيصال | مثال على علاقة **Nontransferable** — «Once a RECEIPT has been issued, it cannot be transferred to another STUDENT.» |
+| 20 | **Receipt** | ريسيبت | إيصال | «A STUDENT can be issued a RECEIPT for paying tuition fees, taking a certification exam, or purchasing items at the bookstore.» |
+| 21 | **Issued to** | إيشود تو | صادر إلى | اسم العلاقة من جهة RECEIPT تجاه STUDENT |
+| 22 | **Issued** | إيشود | صادِر | اسم العلاقة من جهة STUDENT تجاه RECEIPT |
+| 23 | **Diamond** | داياموند | معيّن (شكل) | «A nontransferable relationship is represented with the diamond on the relationship.» — الرمز الذي يميّز العلاقة غير القابلة للنقل على الـ ERD |
+| 24 | **Cancelled** | كانسيلد | مُلغى | «If it was issued in error, it would have to be cancelled, and another RECEIPT would have to be written up.» — الحل الوحيد في العلاقة غير القابلة للنقل |
+| 25 | **Written up** | ريتِن أب | يُحرَّر / يُصدَر من جديد | إصدار إيصال جديد بدلًا من الإيصال المُلغى |
+| 26 | **One-to-Many (1:M)** | ون-تو-ماني | واحد إلى متعدد | «The various types of 1:M relationships are most common in an ER Model.» — النوع الأكثر شيوعًا |
+| 27 | **Many-to-One (M:1)** | ماني-تو-ون | متعدد إلى واحد | الوجه الآخر للـ 1:M — نفس العلاقة تُقرأ من الطرف المقابل |
+| 28 | **"Many"** | ماني | «متعدد» | «'Many' can mean one-or-more or zero-or-more, depending on the optionality.» — المتعدد يعتمد على الـ optionality |
+| 29 | **One-or-more** | ون-أور-مور | واحد أو أكثر | معنى "Many" عندما تكون العلاقة **mandatory** على ذلك الطرف |
+| 30 | **Zero-or-more** | زيرو-أور-مور | صفر أو أكثر | معنى "Many" عندما تكون العلاقة **optional** على ذلك الطرف |
+| 31 | **Many-to-Many (M:M)** | ماني-تو-ماني | متعدد إلى متعدد | «The various types of M:M relationships are common, particularly in a first version of an ER model.» — شائعة في المسودة الأولى |
+| 32 | **Resolved (M:M)** | ريزولفد | مُحلّ | «In later stages of the modeling process, all M:M relationships will be resolved, and disappear.» — تتحول إلى 1:M عبر كيان وسيط في المراحل المتقدمة |
+| 33 | **One-to-One (1:1)** | ون-تو-ون | واحد إلى واحد | «Have cardinality of one and only one in both directions.» — الطرفان بنفس العددية |
+| 34 | **Role** | رول | دور | «Mandatory at one end of the 1:1 relationship commonly occurs when roles are modeled.» — سبب ظهور 1:1 في الـ ERD |
+| 35 | **Acting as** | أكتينج آز | يعمل بصفة | اسم العلاقة من جهة PERSON تجاه TEACHER أو STUDENT في مثال الأدوار |
+| 36 | **Role of** | رول أوف | دور | اسم العلاقة من جهة TEACHER/STUDENT تجاه PERSON |
+| 37 | **PERSON–TEACHER** | بيرسون–تيتشر | الشخص–المعلم | مثال على 1:1 ناتج عن نمذجة الأدوار |
+| 38 | **PERSON–STUDENT** | بيرسون–ستيودنت | الشخص–الطالب | نفس المنطق — نفس PERSON قد يكون طالبًا ومعلمًا في نفس الوقت |
+| 39 | **COMPUTER–MOTHERBOARD** | كومبيوتر–مَذر بورد | الحاسوب–اللوحة الأم | مثال على 1:1 صريح: «Each COMPUTER must contain one and only one MOTHERBOARD. Each MOTHERBOARD must be contained in one and only one COMPUTER.» |
+| 40 | **Contain** | كونتاين | يحتوي | اسم العلاقة من جهة COMPUTER تجاه MOTHERBOARD |
+| 41 | **Contained in** | كونتايند إن | محتوى داخل | اسم العلاقة من جهة MOTHERBOARD تجاه COMPUTER |
+| 42 | **CUSTOMER–SALES REPRESENTATIVE** | كاستمر–سيلز ريبريزنتاتيف | العميل–مندوب المبيعات | مثال على 1:M مع Optionality: «Each CUSTOMER must be visited by one and only one SALES REPRESENTATIVE. Each SALES REPRESENTATIVE may be assigned to one or more CUSTOMERS.» |
+| 43 | **Visited by** | فيزيتد باي | مُزار بواسطة | اسم العلاقة من جهة CUSTOMER تجاه SALES REPRESENTATIVE |
+| 44 | **Assigned to (sales)** | أسايند تو | مُسنَد إلى | اسم العلاقة من جهة SALES REPRESENTATIVE تجاه CUSTOMER |
+| 45 | **STUDENT–TEACHER** | ستيودنت–تيتشر | الطالب–المعلم | مثال على **M:M**: طالب واحد يتعلم من عدة معلمين، ومعلم واحد يعلّم عدة طلاب |
+| 46 | **Learns from** | ليرنز فروم | يتعلم من | اسم العلاقة من جهة STUDENT تجاه TEACHER |
+| 47 | **Educates** | إديوكيتس | يعلّم | اسم العلاقة من جهة TEACHER تجاه STUDENT |
+| 48 | **PERSON–DVD** | بيرسون–دي في دي | الشخص–الأسطوانة | مثال السلايد 15 لتوضيح الأسئلة: «Can one PERSON own many DVDs, or only one? Can one DVD be owned by many PERSONs?» |
+| 49 | **Redundant relationships** | ريداندنت ريليشنشيبس | علاقات زائدة | «Recognize redundant relationships and remove them from the ERD.» — علاقات مكررة بنفس المعنى يجب حذفها |
+| 50 | **Refine and improve the model** | ريفاين آند إمبروف | تحسين وتطوير النموذج | «As we refine and improve our model, we want to make sure our entity relationships correctly model our business rules.» — هدف تحديد نوع العلاقة بدقة |
+| 51 | **Costly mistakes** | كوستلي ميستيكس | أخطاء مكلفة | «You can avoid future costly mistakes by thinking through the details early on.» — سبب أهمية تحديد النوع مبكرًا |
+| 52 | **ER Model** | إي آر مودل | نموذج العلاقات | «The various types of 1:M relationships are most common in an ER Model.» — الوعاء الذي تظهر فيه أنواع العلاقات |
+| 53 | **Cardinality of one or more** | كارديناليتي أوف ون أور مور | عددية واحد أو أكثر | «M:1 and 1:M relationships have cardinality of one or more in one direction» — وصف أحد طرفي العلاقة |
+| 54 | **One and only one** | ون آند أونلي ون | واحد فقط لا غير | وصف الطرف الآخر في 1:M — وأيضًا وصف الطرفين في 1:1 |
+| 55 | **First version of an ER model** | فيرست فيرجن أوف إي آر مودل | المسودة الأولى للنموذج | «M:M relationships are common, particularly in a first version of an ER model.» — تظهر بكثرة في البداية ثم تُحلّ لاحقًا |
+| 56 | **Later stages of the modeling process** | لاتر ستيجز أوف ذا مودلينج بروسيس | المراحل المتأخرة من النمذجة | «In later stages, all M:M relationships will be resolved, and disappear.» — مرحلة الحل |
+
+# Glossary — Artificial, Composite, and Secondary UIDs (Chapter 6)
+
+
+
+| # | Term | النطق بالعربي | الترجمة | التعريف كما ورد بالسلايد |
+|:-:|---|---|---|---|
+| 1 | **UID (Unique Identifier)** | يو آي دي (يونيك أيدنتيفاير) | المعرّف الفريد | «It is the value or combination of values that enables the user to find that one unique item among all the rest.» — القيمة أو مجموعة القيم التي تمكّن المستخدم من إيجاد عنصر واحد فريد بين كل العناصر |
+| 2 | **Simple UID** | سيمبل يو آي دي | معرّف بسيط | «A UID that is a single attribute is a simple UID.» — معرّف مكوّن من خاصية واحدة فقط |
+| 3 | **Composite UID** | كومبوزيت يو آي دي | معرّف مركّب | «If the UID is a combination of attributes, it is called a composite UID.» — معرّف مكوّن من مجموعة خصائص معًا |
+| 4 | **Artificial UID** | آرتيفيشال يو آي دي | معرّف اصطناعي | «Those that don't occur in the natural world but are created for purposes of identification in a system.» — قيمة غير موجودة طبيعيًا، تُنشَأ داخل النظام للتعريف فقط |
+| 5 | **Candidate UID** | كانديديت يو آي دي | معرّف مرشَّح | «One of several UIDs that could be used to identify something» — أحد عدة معرّفات صالحة للاستخدام للتعريف |
+| 6 | **Primary UID** | برايمري يو آي دي | معرّف أساسي | «A candidate UID that is the primary identifier of something» — المرشَّح المختار فعليًا ليكون المعرّف الرسمي |
+| 7 | **Secondary UID** | سيكندري يو آي دي | معرّف ثانوي | «A candidate UID that also identifies something, but is not the primary UID» — مرشَّح صالح لكنه لم يُختَر كأساسي |
+| 8 | **Barred Relationship** | بارد ريليشنشيب | علاقة مقيَّدة (بخط عمودي) | علاقة يحمل فيها طرفها خطًا عموديًا صغيرًا يعني أن المعرّف يورَّث من ذلك الطرف — الخط العمودي هو العلامة المميزة |
+| 9 | **Intersection Entity** | إنتيرسيكشن إنتبتي | كيان تقاطعي | كيان ناتج عن حل علاقة M:M بين كيانين أصليين — يحمل مفاتيح الطرفين معًا |
+| 10 | **M:M Relationship Resolution** | ريزولوشن أوف إم تو إم ريليشنشيب | حل علاقة متعدد-متعدد | «The resolution of a M:M relationship often results in barred relationships from the intersection entity to the original ones.» — تحويل M:M إلى كيان تقاطعي + علاقتين 1:M مقيَّدتين |
+| 11 | **Identification** | أيدنتيفيكيشن | تعريف / تمييز | «The unique identifier enables you to find your record in a file, a particular card in a deck of cards, your package in a warehouse, or a specific piece of data in a database.» — عملية تمييز عنصر واحد عن باقي العناصر |
+| 12 | **Distinguish** | ديستنجويش | يميّز | «Unique identifiers make it possible for us to distinguish one instance of an entity from another.» — الوظيفة الأساسية للـ UID |
+| 13 | **Primary key** | برايمري كي | مفتاح أساسي | «These become primary keys in the database.» — ما يتحول إليه الـ UID عند تنفيذ قاعدة البيانات |
+| 14 | **Access a specific record** | أكسِس أ سبيسيفيك ريكورد | الوصول لسجل محدد | «A primary key allows you to access a specific record in a database.» — وظيفة الـ primary key |
+| 15 | **CONCERT TICKET** | كونسيرت تيكِت | تذكرة حفل | مثال السلايد 4 — التذكرة يمكن تعريفها بـ `ticket number` (Simple UID) أو بـ `date of performance + seat number` (Composite UID) |
+| 16 | **Ticket number** | تيكِت نمبر | رقم التذكرة | مثال على Simple UID في CONCERT TICKET |
+| 17 | **Date of performance / Seat number** | ديت أوف بيرفورمانس / سيت نمبر | تاريخ الحفل / رقم المقعد | مثالان على Composite UID — لا يكفي أحدهما وحده للتمييز |
+| 18 | **CUSTOMER** | كاستمر | العميل | مثال السلايد 5 — إضافة `id` كـ Artificial UID للعميل |
+| 19 | **Create an artificial UID** | كرييت آن آرتيفيشال يو آي دي | إنشاء معرّف اصطناعي | الإجراء الممثَّل بالسهم الأحمر في السلايد 5 — إضافة عمود `# id` للكيان |
+| 20 | **SHOE** | شو | الحذاء | مثال السلايد 6 — «A shoe has a color, a size, a style, but no truly descriptive 'number'.» — لذلك يُنشَأ `shoe ID` |
+| 21 | **Shoe ID** | شو آي دي | معرّف الحذاء | Artificial UID مُنشَأ لتُميَّز كل زوج أحذية |
+| 22 | **STUDENT** | ستيودنت | الطالب | مثال السلايد 7 — الطالب لا يمكن تمييزه بـ first name + last name إلا إذا كان التركيب فريدًا |
+| 23 | **Student ID** | ستيودنت آي دي | رقم الطالب | Artificial UID يُنشَأ للطالب لأنه أبسط من التحقق من تركيب الاسم الكامل |
+| 24 | **ACCOUNT** | أكاونت | الحساب | مثال السلايد 8 — «What is the UID of ACCOUNT? Is it artificial? Is it composite?» — يحتاج Bank number + Account number |
+| 25 | **BANK** | بانك | البنك | الطرف الآخر في العلاقة — رقم الحساب مكرر بين بنوك مختلفة، فتُضاف علاقة البنك لتعريف الحساب |
+| 26 | **Bank routing number** | بانك راوتينج نمبر | رقم توجيه البنك | «Bank to bank transfers always need the bank routing number in addition to the bank account number.» — مثال واقعي على أن الـ UID قد يأتي من علاقة |
+| 27 | **UID from Barred Relationship** | يو آي دي فروم بارد ريليشنشيب | معرّف من علاقة مقيَّدة | «Sometimes the UID is a combination of an attribute and a relationship.» — عندما يأتي جزء من الـ UID من علاقة |
+| 28 | **ENROLLMENT** | إنرولمنت | التسجيل | Intersection entity بين STUDENT وSUBJECT — «The UID of ENROLLMENT comes from STUDENT and SUBJECT.» |
+| 29 | **STUDENT–SUBJECT (M:M)** | ستيودنت–سبجيكت | الطالب–المادة | العلاقة M:M التي حلّها ENROLLMENT — العلاقتان `enrolls for` و`subject of` مقيَّدتان |
+| 30 | **Enrolls for** | إنرولز فور | يسجّل في | اسم العلاقة من جهة STUDENT تجاه ENROLLMENT |
+| 31 | **Subject of** | سبجيكت أوف | مادة لـ | اسم العلاقة من جهة SUBJECT تجاه ENROLLMENT |
+| 32 | **For** | فور | لـ / من أجل | اسم العلاقة من جهة ENROLLMENT تجاه الطرفين (for ... for) |
+| 33 | **Artificial UID Intersection Entity** | آرتيفيشال يو آي دي إنتيرسيكشن إنتبتي | كيان تقاطعي بمعرّف اصطناعي | «It is possible for an intersection entity to use an artificial attribute as the UID, instead of the barred relationships to the originating entities.» — بديل لحل الـ M:M بعلاقات مقيَّدة |
+| 34 | **CATALOG ITEM** | كاتالوج آيتِم | عنصر الكتالوج | Intersection entity بين MANUFACTURER وPRODUCT — يستخدم `number` كـ Artificial UID بدلًا من العلاقات المقيَّدة |
+| 35 | **MANUFACTURER** | مانيوفاكتشرر | المُصنِّع | «Each MANUFACTURER may produce one or more PRODUCTS.» — الطرف الأول في العلاقة M:M |
+| 36 | **PRODUCT** | برودكت | المنتج | «Each PRODUCT may be produced by one or more MANUFACTURERS.» — الطرف الثاني في العلاقة M:M |
+| 37 | **Supplied by** | سابلايد باي | مُوَرَّد بواسطة | اسم العلاقة من جهة CATALOG ITEM تجاه MANUFACTURER |
+| 38 | **Supply** | سابلَي | يُوَرِّد | اسم العلاقة من جهة MANUFACTURER تجاه CATALOG ITEM |
+| 39 | **Has** | هاز | يمتلك / له | اسم العلاقة من جهة CATALOG ITEM تجاه PRODUCT |
+| 40 | **Manufacturer number + Product code** | مانيوفاكتشرر نمبر + برودكت كود | رقم المصنّع + كود المنتج | «An item in a catalog can be uniquely identified by the manufacturer number and the product code.» — Composite UID الطبيعي البديل |
+| 41 | **Catalog number** | كاتالوج نمبر | رقم الكتالوج | Artificial UID الذي حلّ محل العلاقات المقيَّدة — «The relationships are not barred, because an artificial UID — catalog number — has been created instead.» |
+| 42 | **Not barred** | نوت بارد | غير مقيَّدة | «The relationships are not barred, because an artificial UID has been created instead.» — العلاقات بدون خط عمودي لأن الـ UID اصطناعي |
+| 43 | **Person doc id** | بيرسون دوك آي دي | رقم هوية الشخص | مثال على Candidate UID في السلايد 13 — يمكن استخدامه أو استخدام الإيميل كـ UID |
+| 44 | **Email address** | إيميل أدرس | عنوان البريد الإلكتروني | مرشَّح آخر للـ UID — «Each of these uniquely identifies you.» |
+| 45 | **Candidate UIDs (example)** | كانديديت يو آي دي | معرّفات مرشَّحة | «Sometimes two or more possible UIDs exist. For example, Person doc id, email address.» — كلاهما يعرّفك، وكلاهما مرشَّح |
+| 46 | **One primary UID** | ون برايمري يو آي دي | معرّف أساسي واحد | «Only one of the candidate UIDs is chosen as the actual UID.» — قاعدة الاختيار |
+| 47 | **One secondary UID** | ون سيكندري يو آي دي | معرّف ثانوي واحد | مثال STUDENT في السلايد 14 — `badge number` كمعرّف ثانوي بجانب `student ID` الأساسي |
+| 48 | **Two secondary UIDs** | تو سيكندري يو آي دي | معرّفان ثانويان | مثال STUDENT الثاني — `badge number` (مفرد) + `first name + last name` (مركّب) بجانب `student ID` |
+| 49 | **Badge number** | بادج نمبر | رقم الشارة | مثال على Secondary UID في بطاقة الطالب |
+| 50 | **First name + Last name (composite secondary)** | فيرست نيم + لاست نيم | الاسم الأول + الاسم الأخير | مثال على Secondary UID مركّب — يظهر بالعلامة `(#2-1)` و `(#2-2)` |
+| 51 | **Alternative means of searching** | ألترناتيف مينز أوف سيرشينج | وسيلة بحث بديلة | «Secondary UIDs can be useful as an alternative means of searching for data.» — فائدتها العملية |
+| 52 | **Forgot your student ID** | فورجوت يور ستيودنت آي دي | نسيت رقمك الجامعي | «Example: You forgot your student ID, but you have your email with you.» — السيناريو الواقعي لاستخدام الـ Secondary UID |
+| 53 | **Real world identification** | ريال وورلد أيدنتيفيكيشن | التعريف في العالم الواقعي | «In the real world, however, it is sometimes not so easy to distinguish one thing from another.» — الفرق بين العالم الواقعي وقاعدة البيانات |
+| 54 | **Keys need label** | كيز نيد ليبل | المفاتيح تحتاج ملصقًا | مثال السلايد 16 — مفاتيح متشابهة يلزمها ملصق لكل واحد لتمييزه (استعارة للـ UID) |
+| 55 | **First name / Last name** | فيرست نيم / لاست نيم | الاسم الأول / الاسم الأخير | «Could we use a combination of first name and last name? Only if we are sure that the combination is unique.» — ليس دائمًا UID صالح |
+| 56 | **Address / Tel number** | أدرس / تيل نمبر | العنوان / رقم الهاتف | خصائص ليست UID غالبًا — عنوان أو رقم هاتف قد يتغير أو يتكرر |
+| 57 | **Color / Size / Style** | كالر / سايز / ستايل | اللون / المقاس / الطراز | خصائص SHOEE الوصفية — «A shoe has a color, a size, a style, but no truly descriptive 'number'.» — لذلك يُنشَأ Shoe ID |
+| 58 | **Balance / Date opened** | بالانس / ديت أوبند | الرصيد / تاريخ الفتح | خصائص ACCOUNT — ليست UID، بل وصفية |
